@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC    
+          "-//Hibernate/Hibernate Mapping DTD 5.3//EN"    
+          "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+
+<hibernate-mapping>
+	<class name="com.hibernate.mvc.dto.Flight" table="flight_dta">
+		<id name="flightNumber" column="flightNumber">
+			<generator class="increment"></generator>
+		</id>
+		<property name="durationInMinutes" column="durationInMinutes"></property>
+		<many-to-one name="departure" column="unique_code" cascade="all"></many-to-one>
+		<many-to-one name="arrival" column="unique_code" cascade="all"></many-to-one>
+	</class>
+	<class name="com.hibernate.mvc.dto.Airport" table="dep_airport">
+		<id name="unique_code" column="unique_code">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name" column="name"></property>
+		<property name="address" column="address"></property>
+	</class>
+	
+	<class name="com.hibernate.mvc.dto.Airport" table="arrival_airport">
+		<id name="unique_code" column="unique_code">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name" column="name"></property>
+		<property name="address" column="address"></property>
+	</class>
+</hibernate-mapping>

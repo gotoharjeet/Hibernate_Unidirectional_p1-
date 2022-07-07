@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?> 
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+
+ <hibernate-mapping>
+ 	<class name="com.hibernate.mvc.dto.Airport" table="airport_data">
+ 		<id name="unique_code" column="airport_id">
+ 			<!-- <column name="flightNumber"></column>
+		    <generator class="foreign">
+				<param name="property">flight</param>
+			</generator> -->	
+			<generator class="native"></generator>
+ 		</id>
+ 		
+ 		<property name="name" column="airport_name"></property>
+ 		<property name="address" column="airport_address"></property>
+ 		
+ 	</class>
+  </hibernate-mapping>
